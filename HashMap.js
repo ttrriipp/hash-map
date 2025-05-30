@@ -21,6 +21,7 @@ export default class HashMap {
   }
 
   set(key, value) {
+    console.log(this.length());
     const index = this.hash(key);
     if (index < 0 || index >= this.buckets.length) {
       throw new Error("Trying to access index out of bounds");
@@ -52,11 +53,11 @@ export default class HashMap {
 
     // checks to see for hash growth
     if (this.length() === Math.ceil(this.capacity * this.loadFactor)) {
-      this.capacity *= 2;
-      this.buckets.length = this.capacity;
       console.log("bucket di na lang ako");
       const bucketsCopy = this.entries();
       this.clear();
+      this.capacity *= 2;
+      this.buckets.length = this.capacity;
       bucketsCopy.forEach((entry) => {
         this.set(entry[0], entry[1]);
       });

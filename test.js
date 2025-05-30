@@ -17,10 +17,13 @@ test.set("lion", "golden");
 
 test.set("lion", "diamond");
 test.set("moon", "silver");
+test.set("crazy", "kengkoy");
+test.set("wew", "petmalu");
+console.log(test.buckets);
+console.log(test.has("crazy"));
+console.log(test.length());
 console.log(test.get("ice cream"));
 console.log(test.has("lion"));
-console.log(test.length());
-console.log(test.remove("lion"));
 console.log(test.length());
 console.log(test.keys());
 console.log(test.values());
